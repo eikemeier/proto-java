@@ -1,0 +1,27 @@
+= Java Protobuf Dependencies
+:Author:    Oliver Eikemeier
+:Email:     <eikemeier@fillmore-labs.com>
+:Date:      2021-08
+:Revision:  v0.1
+:toc: macro
+
+toc::[]
+
+== Purpose
+
+Demonstrates duplicate class files added by
+https://docs.bazel.build/versions/main/be/java.html#java_proto_library[`java_proto_library`].
+
+== Running
+
+https://github.com/bazelbuild/bazelisk#installation[Install bazelisk], then run
+
+[source,shell]
+bazelisk run //:main
+
+or
+
+[source,shell]
+bazelisk run //:mainlite
+
+
