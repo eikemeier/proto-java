@@ -20,6 +20,7 @@ http_archive(
 
 http_archive(
     name = "com_google_protobuf",
+    # patches = ["//:8925.patch"],
     sha256 = "37269d2b9d207afa38ec74ffb9acced530b56eeaa1db6cb8313afc5f65e07eec",
     strip_prefix = "protobuf-3.18.0-rc1",
     urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.18.0-rc1.tar.gz"],
