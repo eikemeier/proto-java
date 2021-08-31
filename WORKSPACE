@@ -18,12 +18,19 @@ http_archive(
 #    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.17.3.tar.gz"],
 #)
 
+#http_archive(
+#    name = "com_google_protobuf",
+#    # patches = ["//:8925.patch"],
+#    sha256 = "37269d2b9d207afa38ec74ffb9acced530b56eeaa1db6cb8313afc5f65e07eec",
+#    strip_prefix = "protobuf-3.18.0-rc1",
+#    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.18.0-rc1.tar.gz"],
+#)
+
 http_archive(
     name = "com_google_protobuf",
-    # patches = ["//:8925.patch"],
-    sha256 = "37269d2b9d207afa38ec74ffb9acced530b56eeaa1db6cb8313afc5f65e07eec",
-    strip_prefix = "protobuf-3.18.0-rc1",
-    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.18.0-rc1.tar.gz"],
+    sha256 = "9d027ad7f2e35b660fd9e7b5396918f7ed01d09edba258228db474d5c87f8e56",
+    strip_prefix = "protobuf-0f8bc78bcebbf22e4be52b7e4e21dfe739dfe7b5",
+    urls = ["https://github.com/perezd/protobuf/archive/0f8bc78bcebbf22e4be52b7e4e21dfe739dfe7b5.tar.gz"],
 )
 
 http_archive(
