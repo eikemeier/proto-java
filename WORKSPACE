@@ -11,11 +11,25 @@ http_archive(
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/4.1.tar.gz",
 )
 
+#http_archive(
+#    name = "com_google_protobuf",
+#    sha256 = "c6003e1d2e7fefa78a3039f19f383b4f3a61e81be8c19356f85b6461998ad3db",
+#    strip_prefix = "protobuf-3.17.3",
+#    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.17.3.tar.gz"],
+#)
+
 http_archive(
     name = "com_google_protobuf",
     sha256 = "37269d2b9d207afa38ec74ffb9acced530b56eeaa1db6cb8313afc5f65e07eec",
     strip_prefix = "protobuf-3.18.0-rc1",
     urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.18.0-rc1.tar.gz"],
+)
+
+http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = "1f4e59843b61981a96835dc4ac377ad4da9f8c334ebe5e0bb3f58f80c09735f4",
+    strip_prefix = "rules_docker-0.19.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.19.0/rules_docker-v0.19.0.tar.gz"],
 )
 
 # ---
@@ -27,6 +41,16 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
+
+# ---
+
+load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
+
+container_repositories()
+
+load("@io_bazel_rules_docker//java:image.bzl", java_repositories = "repositories")
+
+java_repositories()
 
 # ---
 

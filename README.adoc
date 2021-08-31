@@ -2,7 +2,7 @@
 :Author:    Oliver Eikemeier
 :Email:     <eikemeier@fillmore-labs.com>
 :Date:      2021-08
-:Revision:  v0.1
+:Revision:  v0.2
 :toc: macro
 
 toc::[]
@@ -25,3 +25,17 @@ or
 bazelisk run //:mainlite
 
 
+== Impact
+
+Containers build with `java_image` are affected, test with:
+
+[source,shell]
+bazel run //:container
+
+This needs a local docker installation. Otherwise, just retrieve the list of relevant files with:
+
+[source,shell]
+bazel build //:container
+tar tvf "$(bazel info bazel-bin)/src/main/java/com/example/container-layer.tar"
+tar xOf "$(bazel info bazel-bin)/src/main/java/com/example/container-layer.tar" \
+  ./app/com_example_proto_java/src/main/java/com/example/container.classpath | tr : \\n
