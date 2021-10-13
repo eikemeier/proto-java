@@ -2,7 +2,6 @@ package com.example;
 
 import com.example.v1.Hello;
 import com.google.protobuf.Timestamp;
-import java.time.Instant;
 import java.util.logging.Logger;
 
 public final class ProtoTest {

@@ -11,26 +11,18 @@ http_archive(
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/4.1.tar.gz",
 )
 
-#http_archive(
-#    name = "com_google_protobuf",
-#    sha256 = "c6003e1d2e7fefa78a3039f19f383b4f3a61e81be8c19356f85b6461998ad3db",
-#    strip_prefix = "protobuf-3.17.3",
-#    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.17.3.tar.gz"],
-#)
-
 http_archive(
     name = "com_google_protobuf",
-    # patches = ["//:8925.patch"],
-    sha256 = "37269d2b9d207afa38ec74ffb9acced530b56eeaa1db6cb8313afc5f65e07eec",
-    strip_prefix = "protobuf-3.18.0-rc1",
-    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.18.0-rc1.tar.gz"],
+    sha256 = "9111bf0b542b631165fadbd80aa60e7fb25b25311c532139ed2089d76ddf6dd7",
+    strip_prefix = "protobuf-3.18.1",
+    urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.18.1.tar.gz"],
 )
 
 http_archive(
     name = "io_bazel_rules_docker",
-    sha256 = "1f4e59843b61981a96835dc4ac377ad4da9f8c334ebe5e0bb3f58f80c09735f4",
-    strip_prefix = "rules_docker-0.19.0",
-    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.19.0/rules_docker-v0.19.0.tar.gz"],
+    sha256 = "92779d3445e7bdc79b961030b996cb0c91820ade7ffa7edca69273f404b085d5",
+    strip_prefix = "rules_docker-0.20.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.20.0/rules_docker-v0.20.0.tar.gz"],
 )
 
 # ---
@@ -58,10 +50,10 @@ java_repositories()
 maven_install(
     artifacts = [
         "com.google.code.findbugs:jsr305:3.0.2",
-        "com.google.code.gson:gson:2.8.8",
         "com.google.errorprone:error_prone_annotations:2.9.0",
-        "com.google.guava:guava:30.1.1-jre",
-        "io.github.classgraph:classgraph:4.8.115",
+        "com.google.guava:guava:31.0.1-jre",
+        "io.github.classgraph:classgraph:4.8.126",
+        "io.github.toolfactory:narcissus:1.0.6",
     ],
     fetch_sources = True,
     maven_install_json = "@com_example_proto_java//:maven_install.json",

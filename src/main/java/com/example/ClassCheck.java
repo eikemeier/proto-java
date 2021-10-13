@@ -30,6 +30,7 @@ public final class ClassCheck {
   private ClassCheck() {}
 
   public static void main(String... args) {
+    ClassGraph.CIRCUMVENT_ENCAPSULATION = ClassGraph.CircumventEncapsulationMethod.NARCISSUS;
     ClassGraph classGraph = new ClassGraph();
     try (ScanResult scan = classGraph.scan();
         ResourceList resourceList = scan.getAllResources().filter(MY_FILTER)) {

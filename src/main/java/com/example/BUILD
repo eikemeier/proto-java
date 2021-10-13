@@ -17,6 +17,9 @@ java_binary(
         "@maven//:com_google_guava_guava",
         "@maven//:io_github_classgraph_classgraph",
     ],
+    runtime_deps = [
+        "@maven//:io_github_toolfactory_narcissus",
+    ],
 )
 
 java_binary(
@@ -35,6 +38,9 @@ java_binary(
         "@maven//:com_google_guava_guava",
         "@maven//:io_github_classgraph_classgraph",
     ],
+    runtime_deps = [
+        "@maven//:io_github_toolfactory_narcissus",
+    ],
 )
 
 java_image(
@@ -52,5 +58,8 @@ java_image(
         "@com_google_protobuf//:protobuf_java",
         "@maven//:com_google_guava_guava",
         "@maven//:io_github_classgraph_classgraph",
+    ],
+    runtime_deps = [
+        "@maven//:io_github_toolfactory_narcissus",
     ],
 )

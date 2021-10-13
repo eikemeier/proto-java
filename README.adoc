@@ -1,8 +1,8 @@
 = Java Protobuf Dependencies
 :Author:    Oliver Eikemeier
 :Email:     <eikemeier@fillmore-labs.com>
-:Date:      2021-08
-:Revision:  v0.2
+:Date:      2021-10
+:Revision:  v0.3
 :toc: macro
 
 toc::[]
@@ -39,11 +39,3 @@ bazel build //:container
 tar tvf "$(bazel info bazel-bin)/src/main/java/com/example/container-layer.tar"
 tar xOf "$(bazel info bazel-bin)/src/main/java/com/example/container-layer.tar" \
   ./app/com_example_proto_java/src/main/java/com/example/container.classpath | tr : \\n
-
-== Diagnose
-
-Seems to be introduced by
-https://github.com/protocolbuffers/protobuf/commit/89a9f459e9b6996c36051f59c99b6c40650ad25b[protocolbuffers/protobuf#89a9f459]
-
-Applying `8925.patch` in link:WORKSPACE[WORKSPACE] eliminates the problem, as does reverting to
-3.17.3.
